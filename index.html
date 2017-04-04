@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <!-- materialize-css stylesheet -->
+  <link rel="stylesheet" href="lib/node_modules/materialize-css/dist/css/materialize.min.css">
+  <!-- custom stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <header></header>
+    <p>UserName: <strong data-bind="text: firstName"></strong></p>
+    <p>Last name: <strong data-bind="text: lastName"></strong></p>
+    <p>Username:
+      <input data-bind="value: firstName" />
+    </p>
+    <p>Password:
+      <input data-bind="value: lastName" />
+    </p>
+    <footer></footer>
+  </div>
+  <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <script src="lib/bower_components/knockout/dist/knockout.js"></script>
+  <script src="javascripts/main.js"></script>
+</body>
+
+</html>

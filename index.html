@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Nick Chemsak">
+  <title>KnockOutJS - MaterializeCSS - jQuery</title>
   <!-- materialize-css stylesheet -->
   <link rel="stylesheet" href="lib/node_modules/materialize-css/dist/css/materialize.min.css">
   <!-- custom stylesheet -->
@@ -13,8 +15,8 @@
 <body>
   <div id="wrapper">
     <header></header>
-    <!--     <p>First Name: <strong data-bind="text: firstName"></strong></p>
-    <p>Last Name: <strong data-bind="text: lastName"></strong></p> -->
+    <!-- <p>First Name: <strong data-bind="text: firstName"></strong></p>
+    <p>Last Name: <strong data-bind="text: lastName"></strong></p>
     <p>First Name:
       <input data-bind="value: firstName">
     </p>
@@ -26,8 +28,37 @@
     <button data-bind="click: capitalizeFullName">ALL CAPS</button>
     <button data-bind="click: lowerCaseFullName">no caps</button>
     <button data-bind="click: consoleLogFullName">console log name</button>
+    <br>
+    <br> -->
+    <code>observable arrays and the foreach binding:</code>
+    <h2>Your seat reservations</h2>
+    <button data-bind="click: addSeat">Reserve another seat</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Passenger name</th>
+          <th>Meal</th>
+          <th>Surcharge</th>
+          <th></th>
+        </tr>
+      </thead>
+      <!-- Todo: Generate table body -->
+      <tbody data-bind="foreach: seats">
+        <tr>
+          <td>
+            <input data-bind="value: name" />
+          </td>
+          <td>
+            <select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select>
+          </td>
+          <td data-bind="text: formattedPrice"></td>
+          <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
+        </tr>
+      </tbody>
+    </table>
     <footer></footer>
   </div>
+  <!-- script tags -->
   <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="lib/node_modules/materialize-css/dist/js/materialize.min.js"></script>
   <script src="lib/bower_components/knockout/dist/knockout.js"></script>

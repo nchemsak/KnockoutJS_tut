@@ -1,2 +1,8 @@
 # KnockOutJS Tutorial
-Just learning KnockOutJS
+
+===============================
+
+* KnockOutJS
+* Materialize-CSS
+* RequireJS
+* jQuery

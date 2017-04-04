@@ -6,6 +6,25 @@ function AppViewModel() {
   this.fullName = ko.computed(function() {
     return this.firstName() + " " + this.lastName();
   }, this);
+  this.capitalizeLastName = function() {
+    var currentVal = this.lastName();
+    this.lastName(currentVal.toUpperCase());
+  };
+  this.capitalizeFullName = function() {
+    var last = this.lastName();
+    this.lastName(last.toUpperCase());
+    var first = this.firstName();
+    this.firstName(first.toUpperCase());
+  };
+  this.lowerCaseFullName = function() {
+    var last = this.lastName();
+    this.lastName(last.toLowerCase());
+    var first = this.firstName();
+    this.firstName(first.toLowerCase());
+  };
+  this.consoleLogFullName = function() {
+    console.log(this.fullName());
+  };
 }
 
 // Activates knockout.js

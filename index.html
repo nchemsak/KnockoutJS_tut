@@ -13,8 +13,8 @@
 <body>
   <div id="wrapper">
     <header></header>
-    <p>First Name: <strong data-bind="text: firstName"></strong></p>
-    <p>Last Name: <strong data-bind="text: lastName"></strong></p>
+    <!--     <p>First Name: <strong data-bind="text: firstName"></strong></p>
+    <p>Last Name: <strong data-bind="text: lastName"></strong></p> -->
     <p>First Name:
       <input data-bind="value: firstName">
     </p>
@@ -22,6 +22,10 @@
       <input data-bind="value: lastName">
     </p>
     <p>Full Name: <strong data-bind="text: fullName"></strong></p>
+    <button data-bind="click: capitalizeLastName">CAP last name</button>
+    <button data-bind="click: capitalizeFullName">ALL CAPS</button>
+    <button data-bind="click: lowerCaseFullName">no caps</button>
+    <button data-bind="click: consoleLogFullName">console log name</button>
     <footer></footer>
   </div>
   <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>

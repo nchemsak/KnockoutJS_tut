@@ -7,15 +7,16 @@
   <meta name="author" content="Nick Chemsak">
   <title>KnockOutJS - MaterializeCSS - jQuery</title>
   <!-- materialize-css stylesheet -->
-  <link rel="stylesheet" href="lib/node_modules/materialize-css/dist/css/materialize.min.css">
+  <!-- <link rel="stylesheet" href="lib/node_modules/materialize-css/dist/css/materialize.min.css"> -->
   <!-- custom stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div id="wrapper">
+  <!-- ####################### NAME FORM HTML ########################## -->
+  <!--   <div id="nameForm">
     <header></header>
-    <!-- <p>First Name: <strong data-bind="text: firstName"></strong></p>
+    <p>First Name: <strong data-bind="text: firstName"></strong></p>
     <p>Last Name: <strong data-bind="text: lastName"></strong></p>
     <p>First Name:
       <input data-bind="value: firstName">
@@ -29,10 +30,13 @@
     <button data-bind="click: lowerCaseFullName">no caps</button>
     <button data-bind="click: consoleLogFullName">console log name</button>
     <br>
-    <br> -->
+    <br>
+  </div> -->
+  <!-- ####################### RESERVATION TABLE HTML ########################## -->
+   <div id="reservationTable">
     <code>observable arrays and the foreach binding:</code>
-    <h2>Your seat reservations</h2>
-    <button data-bind="click: addSeat">Reserve another seat</button>
+    <h2>Your seat reservations(<span data-bind="text: seats().length"></span>)</h2>
+    <button data-bind="click: addSeat, enable: seats().length < 5">Reserve another seat</button>
     <table>
       <thead>
         <tr>
@@ -42,7 +46,6 @@
           <th></th>
         </tr>
       </thead>
-      <!-- Todo: Generate table body -->
       <tbody data-bind="foreach: seats">
         <tr>
           <td>
@@ -56,13 +59,63 @@
         </tr>
       </tbody>
     </table>
-    <footer></footer>
   </div>
-  <!-- script tags -->
+  <!-- ####################### EMAIL CLIENT HTML ########################## -->
+  <!--  <div id="emailClient">
+    <ul class="folders" data-bind="foreach: folders">
+      <li data-bind="text: $data,
+                   css: { selected: $data == $root.chosenFolderId() },
+                   click: $root.goToFolder"></li>
+    </ul>
+    <table class="mails" data-bind="with: chosenFolderData">
+      <thead>
+        <tr>
+          <th>From</th>
+          <th>To</th>
+          <th>Subject</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: mails">
+        <tr>
+          <td data-bind="text: from"></td>
+          <td data-bind="text: to"></td>
+          <td data-bind="text: subject"></td>
+          <td data-bind="text: date"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+  <!-- ####################### TODO LIST ########################## -->
+<!--   <h3>Tasks</h3>
+  <form data-bind="submit: addTask">
+    Add task:
+    <input data-bind="value: newTaskText" placeholder="What needs to be done?" />
+    <button type="submit">Add</button>
+  </form>
+  <ul data-bind="foreach: tasks, visible: tasks().length > 0">
+    <li>
+      <input type="checkbox" data-bind="checked: isDone" />
+      <input data-bind="value: title, disable: isDone" />
+      <a href="#" data-bind="click: $parent.removeTask">Delete</a>
+    </li>
+  </ul>
+  You have <b data-bind="text: incompleteTasks().length">&nbsp;</b> incomplete task(s)
+  <span data-bind="visible: incompleteTasks().length == 0"> - it's beer time!</span>
+  <form action="/tasks/saveform" method="post">
+    <input type="hidden" name="tasks" data-bind="value: ko.toJSON(tasks)" />
+    <button type="submit">Save</button>
+    <button data-bind="click: save">Save</button>
+  </form> -->
+  <footer></footer>
+  <!-- ####################### SCRIPT TAGS ########################## -->
   <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="lib/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <!-- <script type="text/javascript" src="lib/node_modules/materialize-css/dist/js/materialize.min.js"></script> -->
   <script src="lib/bower_components/knockout/dist/knockout.js"></script>
-  <script src="javascripts/main.js"></script>
+  <!-- <script src="javascripts/nameForm.js"></script> -->
+  <script src="javascripts/reservationTable.js"></script>
+  <!-- <script src="javascripts/emailClient.js"></script> -->
+  <!-- <script src="javascripts/todo.js"></script> -->
 </body>
 
 </html>
